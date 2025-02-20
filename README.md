@@ -15,7 +15,7 @@ Joohwan Seo, Ph.D. Candidate at UC Berkeley, Mechanical Engineering
 - Then it runs a regulation controller of geometric impedance control. 
 
 ### robot_env/dynamic_models
-- Used to contain `*.so` files, which is a compiled C code to calculate dynamic parameters of the manipulator, such as $M(q)$, $C(q,\dot{q})$, $G(q).
+- Used to contain `*.so` files, which is a compiled C code to calculate dynamic parameters of the manipulator, such as $M(q)$, $C(q,\dot{q})$, $G(q)$.
 - Now, the Coriolis matrix is not utilized per se, so it is no longer utilized.
 
 ### robot_env/mujoco_models
