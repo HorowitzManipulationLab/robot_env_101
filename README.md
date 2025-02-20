@@ -8,6 +8,9 @@ Joohwan Seo, Ph.D. Candidate at UC Berkeley, Mechanical Engineering
 ### Main file
 - robot_env/env_gic.py
 - cd to installation directory:
+  `cd your_installation/robot_env`
+  
+  Then, run the main code via:
   `python robot_env/env_gic.py`
 - Then it runs a regulation controller of geometric impedance control. 
 
