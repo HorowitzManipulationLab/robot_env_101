@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mujoco model="Indy7">
 
-  <compiler angle="radian" inertiafromgeom="false" coordinate="local" convexhull="true" eulerseq="xyz"/>
+  <compiler angle="radian" inertiafromgeom="false" coordinate="local" eulerseq="xyz"/>
   <size njmax="500" nconmax="100"/>
     <!-- <option cone="pyramidal" gravity="0 0 -9.81" timestep="0.00025" integrator="Euler">
         <flag contact="enable"/>

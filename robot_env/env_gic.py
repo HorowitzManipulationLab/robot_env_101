@@ -6,14 +6,14 @@ import mujoco
 import mujoco.viewer
 import numpy as np
 import time, csv, os, copy
+from pathlib import Path
 
 from gym import utils
 
 # import matplotlib.pyplot as plt
-from robot_env.utils.robot_state import RobotState
-from robot_env.utils.mujoco import set_state, set_body_pose_rotm
-from robot_env.utils.misc_func import vee_map, hat_map, rotmat_x
-
+from utils.robot_state import RobotState
+from utils.mujoco import set_state, set_body_pose_rotm
+from utils.misc_func import vee_map, hat_map, rotmat_x
 
 
 class RobotEnv:
@@ -45,7 +45,6 @@ class RobotEnv:
         print('=================================')
 
 
-
         #NOTE(JS) The determinant of the desired rotation matrix should be always 1.
         # (by the definition of the rotational matrix.)
 
@@ -75,12 +74,13 @@ class RobotEnv:
 
     def load_xml(self):
         # dir = "/home/joohwan/deeprl/research/GIC_Learning_public/"
-        dir = os.getcwd() + '/'
+        dir = Path(__file__).parents[1] 
         if self.robot_name == 'ur5e':
             raise NotImplementedError
 
         elif self.robot_name == 'indy7':
-            model_path = dir + "robot_env/mujoco_models/Indy7_insertion.xml"
+            model_path = str(dir/"robot_env"/"mujoco_models"/"Indy7_insertion.xml")
+            # model_path = dir+"robot_env_101/robot_env/mujoco_models/Indy7_insertion.xml"
 
         elif self.robot_name == 'panda':
             raise NotImplementedError
@@ -354,7 +354,7 @@ if __name__ == "__main__":
     show_viewer = True
     angle = 0
     angle_rad = angle / 180 * np.pi
-    RE = RobotEnv(robot_name, env_type, show_viewer = True, obs_type = 'pos', window_size = 1, hole_ori = 'default', 
+    RE = RobotEnv(robot_name, env_type,  show_viewer= True, obs_type = 'pos', window_size = 1, hole_ori = 'default', 
                   use_ext_force = False, testing = True, act_type = 'minimal', reward_version = 'force_penalty',
                   hole_angle = angle_rad, fix_camera = False)
     RE.run()

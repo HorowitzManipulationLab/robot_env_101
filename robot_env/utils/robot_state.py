@@ -6,8 +6,8 @@ import numpy as np
 import mujoco
 import os
 
-from robot_env.utils.filter import ButterLowPass
-from robot_env.utils.mujoco import (MJ_SITE_OBJ, get_contact_force,
+from . filter import ButterLowPass
+from . mujoco import (MJ_SITE_OBJ, get_contact_force,
                                     inverse_frame, pose_transform,
                                     transform_spatial)
 
