@@ -25,3 +25,9 @@ Joohwan Seo, Ph.D. Candidate at UC Berkeley, Mechanical Engineering
 ### robot_env/utils
 - Contains various utility functions to run the simulation.
 - Feel free to look into those!
+
+## Requirements
+Mujoco >= 3.0, just install by
+`pip install mujoco`
+
+Other requirements are trivial.
